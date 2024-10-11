@@ -1,0 +1,25 @@
+#Exploring Python's OS Module
+
+#Task 1: Directory Inspector:
+
+import os
+
+def list_directory_contents(path):
+    return os.listdir(path)
+
+try:
+    path = input("Enter the directory path you want to access (./directory name): ").lower()
+    if os.path.isdir(path) == True:
+        dir_list = list_directory_contents(path)
+        print(dir_list)
+    else:
+        False
+except FileNotFoundError:
+        print("Error: No File Found")
+except PermissionError:
+        print("Do you have permission to view file?")
+else:
+    print("Error while retrieving files")
+   
+
+list_directory_contents(path)
